@@ -1,0 +1,44 @@
+import React from "react";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ModalCloseButton,
+  Button,
+  Text
+} from "@chakra-ui/react";
+
+const ModalDelete = ({isOpen, onClose, handleDelete}) => {
+  return (
+    <Modal
+            isCentered
+            size="lg"
+            isOpen={isOpen}
+            onClose={onClose}
+            >
+                <ModalOverlay/>
+                <ModalContent>
+                    <ModalHeader>Update Propinsi</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody pb={6}>
+                        <Text>Are you sure you want to delete this?</Text>
+                    </ModalBody>
+
+                    <ModalFooter>
+                        <Button mr={3} onClick={onClose}>Cancel</Button>
+                        <Button 
+                            colorScheme='red' 
+                            onClick= {handleDelete}
+                        >
+                        Delete
+                        </Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
+  )
+}
+
+export default ModalDelete;
